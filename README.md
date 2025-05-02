@@ -4,7 +4,7 @@
 - [x] Stack（堆疊）
 - [x] Queue（佇列）
 - [x] Linked List（連結串列）
-- [x] Binary Tree（二元樹）
+- [ ] Binary Tree（二元樹）
 - [ ] Graph（圖論）
 - [ ] Hash Table（雜湊表）
 
