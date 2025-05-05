@@ -35,7 +35,8 @@ int main() {
     CU_add_test(suite, "Underflow Test", test_underflow);
 
     CU_basic_set_mode(CU_BRM_VERBOSE);
-    CU_basic_run_tests();
+    int ret = CU_basic_run_tests();
+    printf("CU_basic_run_tests return: %d\n",ret);
     CU_cleanup_registry();
     return 0;
 }
