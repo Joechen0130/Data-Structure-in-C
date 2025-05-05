@@ -28,4 +28,4 @@ jobs:
       run: |
         cd "./Stack/Array implement"
         ls -l    # 加上這行可幫你確認有沒有 test 可執行檔
-        ./test.exe
+        test
