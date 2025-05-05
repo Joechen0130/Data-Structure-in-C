@@ -22,7 +22,6 @@ jobs:
     - name: Compile program
       run: |
         cd "./Stack/Array implement"
-        make clean
         make
         echo "== Build done =="
 
