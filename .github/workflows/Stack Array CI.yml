@@ -1,4 +1,4 @@
-name: C CI
+name: Implement Stack Using Array CI
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
     - name: Compile program
       run: |
         cd "./Stack/Array implement"
-        make
+        make --always-make
         echo "== Build done =="
 
     - name: Install CUnit
@@ -31,8 +31,6 @@ jobs:
     - name: Run tests
       run: |
         cd "./Stack/Array implement" || { echo "❌ cd 失敗"; exit 1; }
-        ls -l    # 加上這行可幫你確認有沒有 test 可執行檔
-        cd test
         ls -l    # 加上這行可幫你確認有沒有 test 可執行檔
         test || { echo "❌ 測試執行失敗"; exit 1; }
         echo "== test done =="
