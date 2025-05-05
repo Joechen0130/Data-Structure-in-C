@@ -29,7 +29,7 @@ jobs:
       
     - name: Run tests
       run: |
-        cd "./Stack/Array implement" || { echo "❌ cd 失敗"; exit 1; }
+        cd "./Stack/Linked_List_implement" || { echo "❌ cd 失敗"; exit 1; }
         ls -l    # 加上這行可幫你確認有沒有 test 可執行檔
         ./testexe || { echo "❌ 測試執行失敗"; exit 1; }
         echo "== test done =="
