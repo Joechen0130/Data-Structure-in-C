@@ -23,9 +23,11 @@ jobs:
       run: |
         cd "./Stack/Array implement"
         make
+        echo "== Build done =="
 
     - name: Run tests
       run: |
         cd "./Stack/Array implement"
-        ls -l    # 加上這行可幫你確認有沒有 test 可執行檔
+        #ls -l    # 加上這行可幫你確認有沒有 test 可執行檔
         test
+        echo "== test done =="
