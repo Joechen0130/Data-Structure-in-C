@@ -12,4 +12,4 @@ $(TARGET): $(SRC) $(TEST)
 	$(CC) $(CFLAGS) $(SRC) $(TEST) -o $(TARGET) $(LDFLAGS)
 
 clean:
-	rm -f $(TARGET)
+	rm $(TARGET)
