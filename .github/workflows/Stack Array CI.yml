@@ -22,7 +22,8 @@ jobs:
     - name: Compile program
       run: |
         cd "./Stack/Array implement"
-        make --always-make
+        make clean
+        make
         echo "== Build done =="
 
     - name: Install CUnit
