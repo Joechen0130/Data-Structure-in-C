@@ -1,6 +1,6 @@
 #include <CUnit/CUnit.h>
 #include <CUnit/Basic.h>
-#include "Stack_array.h"
+#include <Stack_array.h>
 
 void test_push_and_pop() {
     stack s = { .top = 0 };
@@ -35,8 +35,7 @@ int main() {
     CU_add_test(suite, "Underflow Test", test_underflow);
 
     CU_basic_set_mode(CU_BRM_VERBOSE);
-    int ret = CU_basic_run_tests();
-    printf("CU_basic_run_tests return: %d\n",ret);
+    CU_basic_run_tests();
     CU_cleanup_registry();
     return 0;
 }
