@@ -4,7 +4,7 @@ LDFLAGS = -lcunit
 
 SRC = src/Stack_array.c
 TEST = test/test.c
-TARGET = test
+TARGET = testexe
 
 all: $(TARGET)
 
