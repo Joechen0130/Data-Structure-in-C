@@ -2,14 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-typedef struct node{
-    int data; 
-    struct node* next;
-}node;
+#include "Stack_linkedlist.h"
 
-typedef struct Stack{
-    node* top;
-}Stack;
 
 void initStack(Stack* s){
     s->top = NULL;
@@ -46,17 +40,4 @@ int pop(Stack* s){
         s->top = s->top->next;
         return data;
     }
-}
-int main() {
-    Stack s;
-    initStack(&s);
-    for(int i=0;i<5;i++){
-        push(&s, i);
-        Print(&s);
-    }
-    for(int i=0;i<10;i++){
-        printf("Pop:%d\n",pop(&s));
-        Print(&s);
-    }
-    return 0;
 }
