@@ -2,14 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-#include <Stack_array.h>
-
-#define MAX_SIZE 5
-
-typedef struct{
-    int top;
-    int a[MAX_SIZE];
-}stack;
+#include "Stack_array.h"
 
 bool isFull(stack* s){
     return (s->top < MAX_SIZE)?false:true;

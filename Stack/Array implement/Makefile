@@ -2,11 +2,14 @@ CC = gcc
 CFLAGS = -Wall -Iinclude
 LDFLAGS = -lcunit
 
-SRC = src/your_code.c test/test.c
-OUT = test
+SRC = src/Stack_array.c
+TEST = test/test.c
+TARGET = test
 
-all:
-	$(CC) $(CFLAGS) $(SRC) -o $(OUT) $(LDFLAGS)
+all: $(TARGET)
+
+$(TARGET): $(SRC) $(TEST)
+	$(CC) $(CFLAGS) $(SRC) $(TEST) -o $(TARGET) $(LDFLAGS)
 
 clean:
-	rm -f $(OUT)
+	rm -f $(TARGET)
