@@ -21,6 +21,7 @@ jobs:
 
     - name: Compile program
       run: |
+        cd ./Stack/Array implement
         make
 
     - name: Run tests
