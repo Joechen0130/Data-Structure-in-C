@@ -1,21 +1,12 @@
 CC = gcc
-CFLAGS = -Wall -g
+CFLAGS = -Wall -Iinclude
 LDFLAGS = -lcunit
 
-TARGET = test_stack
-SRCS = stack.c test_stack.c
-OBJS = $(SRCS:.c=.o)
+SRC = src/your_code.c test/test.c
+OUT = test
 
-all: $(TARGET)
-
-$(TARGET): $(OBJS)
-	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
-
-test: $(TARGET)
-	./$(TARGET)
+all:
+	$(CC) $(CFLAGS) $(SRC) -o $(OUT) $(LDFLAGS)
 
 clean:
-	rm -f *.o $(TARGET)
+	rm -f $(OUT)
