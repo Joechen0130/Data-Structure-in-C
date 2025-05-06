@@ -2,8 +2,8 @@ CC = gcc
 CFLAGS = -Wall -Iinclude
 LDFLAGS = -lcunit
 
-SRC = src/Single_Linked_list.c
-TEST = test/test.c
+SRC = src/Single_Linked_list.c src/Single_Linked_List_dump.c
+TEST = test/test.c 
 TARGET = ./testexe
 
 .PHONY: all clean run
