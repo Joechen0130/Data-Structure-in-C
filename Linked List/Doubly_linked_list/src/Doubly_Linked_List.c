@@ -1,12 +1,7 @@
 // Online C compiler to run C program online
 #include <stdio.h>
 #include <stdlib.h>
-
-typedef struct node{
-    int data;
-    struct node* next;
-    struct node* prev;
-}node;
+#include "Doubly_Linked_List.h"
 
 node* createNode(int data){
     node* temp = (node*)malloc(sizeof(node));
@@ -83,28 +78,4 @@ void deleteEnd(node** head){
         current = current->next;
     }
     current->next = NULL;
-}
-
-int main() {
-    node* head = NULL;
-    for(int i=0;i<5;i++)
-        insertBeginning(&head, i);
-    printLinkedList(&head);
-    
-    for(int i=10;i>=6;i--)
-        insertEnd(&head, i);
-    printLinkedList(&head);
-    getMiddleNode(&head);
-    reverseLinkedList(&head);
-    printLinkedList(&head);
-    
-    /*for(int i=0;i<10;i++){
-        deleteBeginning(&head);
-        printLinkedList(&head);
-    }*/
-    for(int i=0;i<10;i++){
-        deleteEnd(&head);
-        printLinkedList(&head);
-    }
-    return 0;
 }
