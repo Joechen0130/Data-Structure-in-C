@@ -1,5 +1,5 @@
 
-## 🧠 資料結構清單
+## 資料結構清單
 
 - [x] Stack（堆疊）
 - [x] Queue（佇列）
@@ -8,7 +8,7 @@
 - [ ] Graph（圖論）
 - [ ] Hash Table（雜湊表）
 
-## 🛠️ 使用技術
+## 使用技術
 
-- 程式語言：C / C++
-- 單元測試：`unittest`（Python）或 `GoogleTest`（C++）
+- 程式語言：C 
+- 單元測試：`CTest`
