@@ -1,0 +1,36 @@
+name: Implement Queue Using Linked List CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: |
+        sudo apt update
+        sudo apt install -y build-essential cmake pkg-config libcunit1 libcunit1-doc libcunit1-dev
+    
+    - name: Compile program
+      run: |
+        cd "./Queue/LinkedList_Implement"
+        make
+        echo "== Build done =="
+
+    - name: Install CUnit
+      run: sudo apt-get update && sudo apt-get install -y libcunit1-dev
+      
+    - name: Run tests
+      run: |
+        cd "./Queue/LinkedList_Implement" || { echo "❌ cd 失敗"; exit 1; }
+        ls -l    # 加上這行可幫你確認有沒有 test 可執行檔
+        ./testexe || { echo "❌ 測試執行失敗"; exit 1; }
+        echo "== test done =="
