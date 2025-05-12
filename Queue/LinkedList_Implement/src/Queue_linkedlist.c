@@ -2,65 +2,51 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
-typedef struct node{
-    int data;
-    struct node* next;
-}node;
+#include "Queue_linkedlist.h"
 
-typedef struct{
-    node* front;
-    node* rear;
-}Queue;
-
-void initQueue(Queue* q){
+void initQueue(Queue* q) {
     q->front = NULL;
     q->rear = NULL;
 }
-bool isEmpty(Queue* q){
-    return (q->front==NULL)?true:false;
+
+bool isEmpty(Queue* q) {
+    return (q->front == NULL);
 }
-void enQueue(Queue* q, int data){
+
+void enQueue(Queue* q, int data) {
     node* temp = (node*)malloc(sizeof(node));
     temp->data = data;
-    if(isEmpty(q)){
-        temp->next=NULL;
-        q->rear = temp;
-        q->front = temp;
-    }
-    else{
+    temp->next = NULL;
+
+    if (isEmpty(q)) {
+        q->front = q->rear = temp;
+    } else {
         q->rear->next = temp;
         q->rear = temp;
     }
 }
-int deQueue(Queue* q){
-    if(isEmpty(q)){
+
+int deQueue(Queue* q) {
+    if (isEmpty(q)) {
         printf("Queue is empty!\n");
         return -1;
-    }
-    else{
-        int data = q->front->data;
+    } else {
+        node* temp = q->front;
+        int data = temp->data;
         q->front = q->front->next;
+        free(temp);
+        if (q->front == NULL) {
+            q->rear = NULL;
+        }
         return data;
     }
 }
-void Print(Queue* q){
+
+void Print(Queue* q) {
     node* current = q->front;
-    while(current){
-        printf("%d->",current->data);
+    while (current) {
+        printf("%d->", current->data);
         current = current->next;
     }
     printf("NULL\n");
-}
-int main() {
-    Queue q;
-    initQueue(&q);
-    for(int i=0;i<20;i++){
-        enQueue(&q, i);
-        Print(&q);
-    }
-    for(int i=0;i<30;i++){
-        printf("data:%d\n",deQueue(&q));
-        Print(&q);
-    }
-    return 0;
 }
